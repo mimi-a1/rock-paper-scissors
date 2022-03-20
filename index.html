@@ -9,15 +9,14 @@
 <body>
     <script>
 
-
-
 function computerPlay() {
     let choices = ["rock", "paper", "scissors"];
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
     return computerChoice;
 }
-// console.log(computerSelection);
+
 let playerSelection;
+let message;
 
 function playRound() {
    let computerSelection = computerPlay();
@@ -25,31 +24,51 @@ function playRound() {
     let playerSelection = prompt('Please input rock, paper or scissors?');
     console.log(playerSelection);
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
-        return 'You win, rock beats scissors!';
+        message = 'You win, rock beats scissors!';
+        return message;
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
-        return 'Computer wins, paper beats rock!';
+        message = 'Computer wins, paper beats rock!';
+        return message;
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
-        return 'You win, scissors beats paper!';
+        message = 'You win, scissors beats paper!';
+        return message;
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
-        return 'Computer wins, rock beats scissors!';
+        message = 'Computer wins, rock beats scissors!';
+        return message;
     } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
-        return 'Computer wins, scissors beats paper!';
+        message = 'Computer wins, scissors beats paper!';
+        return message;
     } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
-        return 'You win, paper beats rock!';
+        message = 'You win, paper beats rock!';
+        return message;
     } else if (playerSelection.toLowerCase() === computerSelection) {
-        return 'No winner! It\'s a tie';
+        message = 'No winner! It\'s a tie';
+        return message;
     } else {
-        return 'Error';
+        message = 'Error';
+        return message;
     }
 }
     console.log(playRound());
 
+function game() {
+let computerScore = 0;
+let playerScore = 0;
+   console.log(playRound());
+if (message.includes('Computer wins')) {
+    console.log(`Computer Score: ${++computerScore}`);
+    console.log(`Player Score: ${playerScore}`);
+} else if (message.includes('You win')) {
+    console.log(`Your Score: ${++playerScore}`);
+    console.log(`Computer Score: ${computerScore}`);
+} else {
+    console.log(`Your Score: ${playerScore}`);
+    console.log(`Computer Score: ${computerScore}`);
+}
 
-    for (let i = 0; i < 5; i++) {
-   // your code here!
-   console.log(playRound(), i);
-} 
+}
 
+console.log(game());
 
 
     </script>
