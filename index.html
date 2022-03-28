@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div>
 <button id = "rock" class = "button">Rock</button>
 <button id = "paper" class = "button">Paper</button>
 <button id = "scissors" class = "button">Scissors</button>
+</div>
 <div id = 'div1'></div>
 <div id = 'div2'></div>
 <div id = 'div3'></div>
@@ -23,9 +25,8 @@ function computerPlay() {
     return computerChoice;
 }
 
+
 let playerSelection;
-
-
 let selectRock = document.querySelector('#rock');
 let selectPaper = document.querySelector('#paper');
 let selectScissors = document.querySelector('#scissors');
@@ -37,6 +38,7 @@ let scoreBoard = document.querySelector('#div2')
 let announceWinner = document.querySelector('#div3');
 
 let message = document.querySelector('#div1');
+
 
 selectRock.addEventListener('click', () => {
     let computerSelection = computerPlay();
@@ -55,11 +57,7 @@ selectRock.addEventListener('click', () => {
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
         }
-        if (computerScore === 5) {
-            announceWinner.textContent = 'Computer Wins! Better luck next time!';
-        } else if (playerScore === 5) {
-            announceWinner.textContent = 'Congratulations! You Win!!'; 
-        }
+       winner();
 });
 
 selectPaper.addEventListener('click', () => {
@@ -79,11 +77,7 @@ selectPaper.addEventListener('click', () => {
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
         }
-        if (computerScore === 5) {
-            announceWinner.textContent = 'Computer Wins! Better luck next time!';
-        } else if (playerScore === 5) {
-            announceWinner.textContent = 'Congratulations! You Win!!'; 
-        }
+        winner();
 });
 
 selectScissors.addEventListener('click', () => {
@@ -103,47 +97,22 @@ selectScissors.addEventListener('click', () => {
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
         }
-        if (computerScore === 5) {
-            announceWinner.textContent = 'Computer Wins! Better luck next time!';
-        } else if (playerScore === 5) {
-            announceWinner.textContent = 'Congratulations! You Win!!'; 
-        }
+        winner();
 });
 
-/* 
-function game() {
-let computerScore = 0;
-let playerScore = 0;
-
-for(i = 0; i < 5; i++) {
-   console.log(playRound());
-if (message.includes('Computer wins')) {
-    console.log(`Computer Score: ${++computerScore}`);
-    console.log(`Player Score: ${playerScore}`);
-} else if (message.includes('You win')) {
-    console.log(`Your Score: ${++playerScore}`);
-    console.log(`Computer Score: ${computerScore}`);
-} else {
-    console.log(`Your Score: ${playerScore}`);
-    console.log(`Computer Score: ${computerScore}`);
-}
-}
-if (computerScore > playerScore) {
-    console.log("Uh Oh! Computer wins the game!");
-    alert("Uh Oh! Computer wins the game!");
-} else if (computerScore < playerScore) {
-    console.log("Yayy! You win the game!");
-    alert("Yayy! You win the game!");
-} else {
-    console.log("It's a tie! No one wins");
-    alert("It's a tie! No one wins");
-}
-}
-*/
-
-
-
-
+function winner() {
+    if (computerScore === 5) {
+        announceWinner.textContent = 'Computer Wins! Better luck next time!';
+       selectRock.disabled = true;
+       selectPaper.disabled = true;
+       selectScissors.disabled = true;
+    } else if (playerScore === 5) {
+        announceWinner.textContent = 'Congratulations! You Win!!';
+        selectRock.disabled = true;
+        selectPaper.disabled = true;
+        selectScissors.disabled = true;
+    }
+};
 
 </script>
 </body>
