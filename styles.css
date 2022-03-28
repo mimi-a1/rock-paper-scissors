@@ -5,8 +5,9 @@ border: 2px solid grey;
 padding: 15px;
 margin: 15px;
 width: 150px;
-border-radius: 10px;
-font-size: 25px;
+border-radius: 12px;
+font-size: 20px;
+box-shadow: 0 0 10px;
 }
 
 button:hover {
@@ -18,18 +19,29 @@ button:active {
 }
 
 #div1 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     margin: 15px;
 }
 
 #div2 {
-    font-size: 25px;
-    margin: 10px;
+    font-size: 24px;
+    margin: 15px;
 }
 
 #div3 {
     font-size: 40px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-top: 40px;
     padding: 15px;
+    color: rgb(235, 145, 29);
+    width: 65%;
 }
+
+#div0 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    color: rgb(82, 82, 82);
+}
+

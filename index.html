@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>The Rock Paper Scissors game</h1>
+    <div id = "div0">In this game of rock paper scissors, first player to 5 wins! You will be playing against the computer :)</div>
 <div>
 <button id = "rock" class = "button">Rock</button>
 <button id = "paper" class = "button">Paper</button>
 <button id = "scissors" class = "button">Scissors</button>
 </div>
+
 <div id = 'div1'></div>
 <div id = 'div2'></div>
 <div id = 'div3'></div>
@@ -46,17 +49,17 @@ selectRock.addEventListener('click', () => {
     console.log(computerSelection);
     playerSelection = 'rock';
         if (computerSelection == 'scissors') {
-        message.textContent = 'You won';
+        message.textContent = 'You win! Rocks beats Scissors';
         message.style.color = 'green';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, Computer score: ${computerScore}`;
         } else if (computerSelection == 'paper') {
-        message.textContent = 'Computer won';
+        message.textContent = 'Computer wins, Paper beats Rock';
         message.style.color = 'red';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, Computer score: ${++computerScore}`;
         } else  {
         message.textContent = 'Tie!';
         message.style.color = 'grey';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, Computer score: ${computerScore}`;
         }
        winner();
 });
@@ -66,17 +69,17 @@ selectPaper.addEventListener('click', () => {
     console.log(computerSelection);
     playerSelection = 'paper';
         if (computerSelection == 'scissors') {
-        message.textContent = 'Computer won';
+        message.textContent = 'Computer wins, Scissors beats paper';
         message.style.color = 'red';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, Computer score: ${++computerScore}`;
         } else if (computerSelection == 'rock') {
-        message.textContent = 'You won';
+        message.textContent = 'You win, Paper beats Rock';
         message.style.color = 'green';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, Computer score: ${computerScore}`;
         } else  {
         message.textContent = 'Tie!';
         message.style.color = 'grey';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, Computer score: ${computerScore}`;
         }
         winner();
 });
@@ -86,31 +89,31 @@ selectScissors.addEventListener('click', () => {
     console.log(computerSelection);
     playerSelection = 'scissors';
         if (computerSelection == 'paper') {
-        message.textContent = 'You won';
+        message.textContent = 'You win, Scissors beats Paper';
         message.style.color = 'green';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, Computer score: ${computerScore}`;
         } else if (computerSelection == 'rock') {
-        message.textContent = 'Computer won';
+        message.textContent = 'Computer wins, Rock beats Scissors';
         message.style.color = 'red';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, Computer score: ${++computerScore}`;
         } else  {
         message.textContent = 'Tie!';
         message.style.color = 'grey';
-        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, Computer score: ${computerScore}`;
         }
         winner();
 });
 
 function winner() {
     if (computerScore === 5) {
-        announceWinner.textContent = 'Computer Wins! Better luck next time!';
-        announceWinner.style.border = '2px solid red';
+        announceWinner.textContent = 'Uh Oh! Computer Wins. Better luck next time!';
+        announceWinner.style.cssText = "border: 2px solid red; box-shadow: 0 0 10px;";
        selectRock.disabled = true;
        selectPaper.disabled = true;
        selectScissors.disabled = true;
     } else if (playerScore === 5) {
         announceWinner.textContent = 'Congratulations! You Win!!';
-        announceWinner.style.border = '2px solid green';
+        announceWinner.style.cssText = "border: 2px solid green; box-shadow: 0 0 10px;";
         selectRock.disabled = true;
         selectPaper.disabled = true;
         selectScissors.disabled = true;
