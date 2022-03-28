@@ -11,7 +11,7 @@
 <button id = "rock" class = "button">Rock</button>
 <button id = "paper" class = "button">Paper</button>
 <button id = "scissors" class = "button">Scissors</button>
-
+<div></div>
 <script>
 
 function computerPlay() {
@@ -21,29 +21,31 @@ function computerPlay() {
 }
 
 let playerSelection;
-let message;
+
 
 let selectRock = document.querySelector('#rock');
 let selectPaper = document.querySelector('#paper');
 let selectScissors = document.querySelector('#scissors');
 
+
+
 selectRock.addEventListener('click', () => {
     let computerSelection = computerPlay();
     console.log(computerSelection);
     playerSelection = 'rock';
-    let message;
+    let message = document.querySelector('div');
     if (computerSelection == 'scissors') {
-        message = 'You won';
-        console.log(message);
-        return message;
+        message.textContent = 'You won';
+        console.log(message.textContent);
+        return message.textContent;
     } else if (computerSelection == 'paper') {
-        message = 'Computer won';
-        console.log(message);
-        return message;
+        message.textContent = 'Computer won';
+        console.log(message.textContent);
+        return message.textContent;
     } else  {
-        message = 'Tie!';
-        console.log(message);
-        return message;
+        message.textContent = 'Tie!';
+        console.log(message.textContent);
+        return message.textContent;
     }
 });
 
@@ -51,19 +53,19 @@ selectPaper.addEventListener('click', () => {
     let computerSelection = computerPlay();
     console.log(computerSelection);
     playerSelection = 'paper';
-    let message;
+    let message = document.querySelector('div');
     if (computerSelection == 'scissors') {
-        message = 'Computer won';
-        console.log(message);
-        return message;
+        message.textContent = 'Computer won';
+        console.log(message.textContent);
+        return message.textContent;
     } else if (computerSelection == 'rock') {
-        message = 'You won';
-        console.log(message);
-        return message;
+        message.textContent = 'You won';
+        console.log(message.textContent);
+        return message.textContent;
     } else  {
-        message = 'Tie!';
-        console.log(message);
-        return message;
+        message.textContent = 'Tie!';
+        console.log(message.textContent);
+        return message.textContent;
     }
 });
 
@@ -71,19 +73,19 @@ selectScissors.addEventListener('click', () => {
     let computerSelection = computerPlay();
     console.log(computerSelection);
     playerSelection = 'scissors';
-    let message;
+    let message = document.querySelector('div');
     if (computerSelection == 'paper') {
-        message = 'You won';
-        console.log(message);
-        return message;
+        message.textContent = 'You won';
+        console.log(message.textContent);
+        return message.textContent;
     } else if (computerSelection == 'rock') {
-        message = 'Computer won';
-        console.log(message);
-        return message;
+        message.textContent = 'Computer won';
+        console.log(message.textContent);
+        return message.textContent;
     } else  {
-        message = 'Tie!';
-        console.log(message);
-        return message;
+        message.textContent = 'Tie!';
+        console.log(message.textContent);
+        return message.textContent;
     }
 });
 
