@@ -11,7 +11,10 @@
 <button id = "rock" class = "button">Rock</button>
 <button id = "paper" class = "button">Paper</button>
 <button id = "scissors" class = "button">Scissors</button>
-<div></div>
+<div id = 'div1'></div>
+<div id = 'div2'></div>
+<div id = 'div3'></div>
+
 <script>
 
 function computerPlay() {
@@ -27,118 +30,86 @@ let selectRock = document.querySelector('#rock');
 let selectPaper = document.querySelector('#paper');
 let selectScissors = document.querySelector('#scissors');
 
+let playerScore = 0;
+let computerScore = 0;
+let game = 0;
+let scoreBoard = document.querySelector('#div2')
+let announceWinner = document.querySelector('#div3');
 
+let message = document.querySelector('#div1');
 
 selectRock.addEventListener('click', () => {
     let computerSelection = computerPlay();
     console.log(computerSelection);
     playerSelection = 'rock';
-    let message = document.querySelector('div');
-    if (computerSelection == 'scissors') {
+        if (computerSelection == 'scissors') {
         message.textContent = 'You won';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    } else if (computerSelection == 'paper') {
+        } else if (computerSelection == 'paper') {
         message.textContent = 'Computer won';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    } else  {
+        } else  {
         message.textContent = 'Tie!';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    }
+        }
+        if (computerScore === 5) {
+            announceWinner.textContent = 'Computer Wins! Better luck next time!';
+        } else if (playerScore === 5) {
+            announceWinner.textContent = 'Congratulations! You Win!!'; 
+        }
 });
 
 selectPaper.addEventListener('click', () => {
     let computerSelection = computerPlay();
     console.log(computerSelection);
     playerSelection = 'paper';
-    let message = document.querySelector('div');
-    if (computerSelection == 'scissors') {
+        if (computerSelection == 'scissors') {
         message.textContent = 'Computer won';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    } else if (computerSelection == 'rock') {
+        } else if (computerSelection == 'rock') {
         message.textContent = 'You won';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    } else  {
+        } else  {
         message.textContent = 'Tie!';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    }
+        }
+        if (computerScore === 5) {
+            announceWinner.textContent = 'Computer Wins! Better luck next time!';
+        } else if (playerScore === 5) {
+            announceWinner.textContent = 'Congratulations! You Win!!'; 
+        }
 });
 
 selectScissors.addEventListener('click', () => {
     let computerSelection = computerPlay();
     console.log(computerSelection);
     playerSelection = 'scissors';
-    let message = document.querySelector('div');
-    if (computerSelection == 'paper') {
+        if (computerSelection == 'paper') {
         message.textContent = 'You won';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    } else if (computerSelection == 'rock') {
+        } else if (computerSelection == 'rock') {
         message.textContent = 'Computer won';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    } else  {
+        } else  {
         message.textContent = 'Tie!';
+        scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
         console.log(message.textContent);
-        return message.textContent;
-    }
+        }
+        if (computerScore === 5) {
+            announceWinner.textContent = 'Computer Wins! Better luck next time!';
+        } else if (playerScore === 5) {
+            announceWinner.textContent = 'Congratulations! You Win!!'; 
+        }
 });
 
-/*
-function playRound() { 
-    let playerSelection;
-    selectRock.addEventListener('click', () => {
-    playerSelection = "rock";
-    console.log(playerSelection);
-    });
-    
-    selectPaper.addEventListener('click', () => {
-    playerSelection = "paper";
-    console.log(playerSelection);
-    });
-    
-    selectScissors.addEventListener('click', () => {
-    playerSelection = "scissors";
-    console.log(playerSelection);
-    });
-
-    let computerSelection = computerPlay();
-    console.log(computerSelection);
-
-    if (playerSelection === "rock" && computerSelection === "scissors") {
-        message = 'You win, rock beats scissors!';
-        return message;
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
-        message = 'Computer wins, paper beats rock!';
-        return message;
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        message = 'You win, scissors beats paper!';
-        return message;
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        message = 'Computer wins, rock beats scissors!';
-        return message;
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        message = 'Computer wins, scissors beats paper!';
-        return message;
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
-        message = 'You win, paper beats rock!';
-        return message;
-    } else if (playerSelection === computerSelection) {
-        message = 'No winner! It\'s a tie';
-        return message;
-    } else {
-        message = 'Error';
-        return message;
-    }
-}
-
-console.log(playRound());
-*/
 /* 
 function game() {
 let computerScore = 0;
