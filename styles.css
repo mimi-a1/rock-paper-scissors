@@ -2,11 +2,11 @@
     background-color: rgb(241, 155, 169);
     color: black;
 border: 2px solid grey;
-padding: 10px;
-margin: 10px;
-width: 100px;
+padding: 15px;
+margin: 15px;
+width: 150px;
 border-radius: 10px;
-font-size: 15px;
+font-size: 25px;
 }
 
 button:hover {
@@ -15,4 +15,21 @@ button:hover {
 
 button:active {
     background-color: rgb(214, 212, 212);
+}
+
+#div1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+#div2 {
+    font-size: 25px;
+    margin: 10px;
+}
+
+#div3 {
+    font-size: 40px;
+    margin: 10px;
+    padding: 15px;
 }

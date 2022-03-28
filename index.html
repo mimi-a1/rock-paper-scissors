@@ -34,10 +34,11 @@ let selectScissors = document.querySelector('#scissors');
 let playerScore = 0;
 let computerScore = 0;
 let game = 0;
+
+let message = document.querySelector('#div1');
 let scoreBoard = document.querySelector('#div2')
 let announceWinner = document.querySelector('#div3');
 
-let message = document.querySelector('#div1');
 
 
 selectRock.addEventListener('click', () => {
@@ -46,16 +47,16 @@ selectRock.addEventListener('click', () => {
     playerSelection = 'rock';
         if (computerSelection == 'scissors') {
         message.textContent = 'You won';
+        message.style.color = 'green';
         scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
-        console.log(message.textContent);
         } else if (computerSelection == 'paper') {
         message.textContent = 'Computer won';
+        message.style.color = 'red';
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
-        console.log(message.textContent);
         } else  {
         message.textContent = 'Tie!';
+        message.style.color = 'grey';
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
-        console.log(message.textContent);
         }
        winner();
 });
@@ -66,16 +67,16 @@ selectPaper.addEventListener('click', () => {
     playerSelection = 'paper';
         if (computerSelection == 'scissors') {
         message.textContent = 'Computer won';
+        message.style.color = 'red';
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
-        console.log(message.textContent);
         } else if (computerSelection == 'rock') {
         message.textContent = 'You won';
+        message.style.color = 'green';
         scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
-        console.log(message.textContent);
         } else  {
         message.textContent = 'Tie!';
+        message.style.color = 'grey';
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
-        console.log(message.textContent);
         }
         winner();
 });
@@ -86,16 +87,16 @@ selectScissors.addEventListener('click', () => {
     playerSelection = 'scissors';
         if (computerSelection == 'paper') {
         message.textContent = 'You won';
+        message.style.color = 'green';
         scoreBoard.textContent = `Game ${++game} - Your score: ${++playerScore}, ComputerScore: ${computerScore}`;
-        console.log(message.textContent);
         } else if (computerSelection == 'rock') {
         message.textContent = 'Computer won';
+        message.style.color = 'red';
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${++computerScore}`;
-        console.log(message.textContent);
         } else  {
         message.textContent = 'Tie!';
+        message.style.color = 'grey';
         scoreBoard.textContent = `Game ${++game} - Your score: ${playerScore}, ComputerScore: ${computerScore}`;
-        console.log(message.textContent);
         }
         winner();
 });
@@ -103,11 +104,13 @@ selectScissors.addEventListener('click', () => {
 function winner() {
     if (computerScore === 5) {
         announceWinner.textContent = 'Computer Wins! Better luck next time!';
+        announceWinner.style.border = '2px solid red';
        selectRock.disabled = true;
        selectPaper.disabled = true;
        selectScissors.disabled = true;
     } else if (playerScore === 5) {
         announceWinner.textContent = 'Congratulations! You Win!!';
+        announceWinner.style.border = '2px solid green';
         selectRock.disabled = true;
         selectPaper.disabled = true;
         selectScissors.disabled = true;
