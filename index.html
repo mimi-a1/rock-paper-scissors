@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
+<button id = "rock" class = "button">Rock</button>
+<button id = "paper" class = "button">Paper</button>
+<button id = "scissors" class = "button">Scissors</button>
+
+<script>
 
 function computerPlay() {
     let choices = ["rock", "paper", "scissors"];
@@ -18,30 +23,110 @@ function computerPlay() {
 let playerSelection;
 let message;
 
-function playRound() {
-    playerSelection = prompt('Please input rock, paper or scissors? (Case-insensitive)');
-    console.log(playerSelection);
+let selectRock = document.querySelector('#rock');
+let selectPaper = document.querySelector('#paper');
+let selectScissors = document.querySelector('#scissors');
+
+selectRock.addEventListener('click', () => {
     let computerSelection = computerPlay();
     console.log(computerSelection);
-    if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+    playerSelection = 'rock';
+    let message;
+    if (computerSelection == 'scissors') {
+        message = 'You won';
+        console.log(message);
+        return message;
+    } else if (computerSelection == 'paper') {
+        message = 'Computer won';
+        console.log(message);
+        return message;
+    } else  {
+        message = 'Tie!';
+        console.log(message);
+        return message;
+    }
+});
+
+selectPaper.addEventListener('click', () => {
+    let computerSelection = computerPlay();
+    console.log(computerSelection);
+    playerSelection = 'paper';
+    let message;
+    if (computerSelection == 'scissors') {
+        message = 'Computer won';
+        console.log(message);
+        return message;
+    } else if (computerSelection == 'rock') {
+        message = 'You won';
+        console.log(message);
+        return message;
+    } else  {
+        message = 'Tie!';
+        console.log(message);
+        return message;
+    }
+});
+
+selectScissors.addEventListener('click', () => {
+    let computerSelection = computerPlay();
+    console.log(computerSelection);
+    playerSelection = 'scissors';
+    let message;
+    if (computerSelection == 'paper') {
+        message = 'You won';
+        console.log(message);
+        return message;
+    } else if (computerSelection == 'rock') {
+        message = 'Computer won';
+        console.log(message);
+        return message;
+    } else  {
+        message = 'Tie!';
+        console.log(message);
+        return message;
+    }
+});
+
+/*
+function playRound() { 
+    let playerSelection;
+    selectRock.addEventListener('click', () => {
+    playerSelection = "rock";
+    console.log(playerSelection);
+    });
+    
+    selectPaper.addEventListener('click', () => {
+    playerSelection = "paper";
+    console.log(playerSelection);
+    });
+    
+    selectScissors.addEventListener('click', () => {
+    playerSelection = "scissors";
+    console.log(playerSelection);
+    });
+
+    let computerSelection = computerPlay();
+    console.log(computerSelection);
+
+    if (playerSelection === "rock" && computerSelection === "scissors") {
         message = 'You win, rock beats scissors!';
         return message;
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
         message = 'Computer wins, paper beats rock!';
         return message;
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
         message = 'You win, scissors beats paper!';
         return message;
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
         message = 'Computer wins, rock beats scissors!';
         return message;
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
         message = 'Computer wins, scissors beats paper!';
         return message;
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
         message = 'You win, paper beats rock!';
         return message;
-    } else if (playerSelection.toLowerCase() === computerSelection) {
+    } else if (playerSelection === computerSelection) {
         message = 'No winner! It\'s a tie';
         return message;
     } else {
@@ -50,9 +135,13 @@ function playRound() {
     }
 }
 
+console.log(playRound());
+*/
+/* 
 function game() {
 let computerScore = 0;
 let playerScore = 0;
+
 for(i = 0; i < 5; i++) {
    console.log(playRound());
 if (message.includes('Computer wins')) {
@@ -77,10 +166,12 @@ if (computerScore > playerScore) {
     alert("It's a tie! No one wins");
 }
 }
+*/
 
-game();
 
 
-    </script>
+
+
+</script>
 </body>
 </html>
